@@ -283,7 +283,11 @@
           1
         ],
         "type": "integer",
-        "format": "int32"
+        "format": "int32",
+        "x-enum-varnames": [
+          "Style",
+          "Behavior"
+        ]
       },
       "ComponentManifestPropsStyleDefinition": {
         "required": [
@@ -322,7 +326,12 @@
           2
         ],
         "type": "integer",
-        "format": "int32"
+        "format": "int32",
+        "x-enum-varnames": [
+          "Unset",
+          "Literal",
+          "DesignToken"
+        ]
       },
       "StyleValueType": {
         "enum": [
@@ -330,7 +339,11 @@
           1
         ],
         "type": "integer",
-        "format": "int32"
+        "format": "int32",
+        "x-enum-varnames": [
+          "String",
+          "Number"
+        ]
       },
       "StyleValueUnit": {
         "enum": [
@@ -339,7 +352,12 @@
           2
         ],
         "type": "integer",
-        "format": "int32"
+        "format": "int32",
+        "x-enum-varnames": [
+          "Px",
+          "Rem",
+          "Percent"
+        ]
       }
     }
   }
