@@ -5,20 +5,10 @@
     "version": "1.0"
   },
   "paths": {
-    "/Profile/{id}": {
+    "/Schema/ComponentManifestDefinition": {
       "get": {
         "tags": [
-          "Profile"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
+          "Public"
         ],
         "responses": {
           "200": {
@@ -26,17 +16,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProfileModel"
+                  "$ref": "#/components/schemas/ComponentManifestDefinition"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProfileModel"
+                  "$ref": "#/components/schemas/ComponentManifestDefinition"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProfileModel"
+                  "$ref": "#/components/schemas/ComponentManifestDefinition"
                 }
               }
             }
@@ -44,47 +34,173 @@
         }
       }
     },
-    "/Profile": {
-      "put": {
+    "/Schema/ComponentManifestPropsKind": {
+      "get": {
         "tags": [
-          "Profile"
+          "Public"
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "type": "string"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProfileModel"
+                  "$ref": "#/components/schemas/ComponentManifestPropsKind"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProfileModel"
+                  "$ref": "#/components/schemas/ComponentManifestPropsKind"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProfileModel"
+                  "$ref": "#/components/schemas/ComponentManifestPropsKind"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Schema/ComponentManifestPropsStyleDefinition": {
+      "get": {
+        "tags": [
+          "Public"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComponentManifestPropsStyleDefinition"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComponentManifestPropsStyleDefinition"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComponentManifestPropsStyleDefinition"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Schema/ComponentManifestPropsBehaviorDefinition": {
+      "get": {
+        "tags": [
+          "Public"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComponentManifestPropsBehaviorDefinition"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComponentManifestPropsBehaviorDefinition"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComponentManifestPropsBehaviorDefinition"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Schema/ComponentManifestPropsStyleValueKind": {
+      "get": {
+        "tags": [
+          "Public"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComponentManifestPropsStyleValueKind"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComponentManifestPropsStyleValueKind"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComponentManifestPropsStyleValueKind"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Schema/StyleValueType": {
+      "get": {
+        "tags": [
+          "Public"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StyleValueType"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StyleValueType"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StyleValueType"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Schema/StyleValueUnit": {
+      "get": {
+        "tags": [
+          "Public"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StyleValueUnit"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StyleValueUnit"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StyleValueUnit"
                 }
               }
             }
@@ -95,10 +211,90 @@
   },
   "components": {
     "schemas": {
-      "ProfileModel": {
+      "ComponentManifestDefinition": {
+        "required": [
+          "baseProps",
+          "name",
+          "tagName",
+          "variants"
+        ],
         "type": "object",
         "properties": {
-          "id": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "tagName": {
+            "type": "string",
+            "nullable": true
+          },
+          "baseProps": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ComponentManifestPropsDefinition"
+            },
+            "nullable": true
+          },
+          "variants": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "variantOverrides": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ComponentManifestPropsDefinition"
+              }
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ComponentManifestPropsBehaviorDefinition": {
+        "required": [
+          "key"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ComponentManifestPropsDefinition": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "$ref": "#/components/schemas/ComponentManifestPropsKind"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ComponentManifestPropsKind": {
+        "enum": [
+          0,
+          1
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "ComponentManifestPropsStyleDefinition": {
+        "required": [
+          "cssProperty",
+          "key",
+          "name",
+          "valueType"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
             "type": "string",
             "nullable": true
           },
@@ -106,21 +302,44 @@
             "type": "string",
             "nullable": true
           },
-          "createdTime": {
+          "cssProperty": {
             "type": "string",
-            "format": "date-time"
-          },
-          "updatedTime": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "deletedTime": {
-            "type": "string",
-            "format": "date-time",
             "nullable": true
+          },
+          "valueType": {
+            "$ref": "#/components/schemas/StyleValueType"
+          },
+          "unit": {
+            "$ref": "#/components/schemas/StyleValueUnit"
           }
         },
         "additionalProperties": false
+      },
+      "ComponentManifestPropsStyleValueKind": {
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "StyleValueType": {
+        "enum": [
+          0,
+          1
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "StyleValueUnit": {
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
       }
     }
   }
