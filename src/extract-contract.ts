@@ -189,7 +189,7 @@ async function main() {
   }
 
   // 6) 출력 네임스페이스 생성
-  const rootNs = out.addModule({ name: "Generated", isExported: true });
+  const rootNs = out.addModule({ name: "Contract", isExported: true });
   const enumsNs = rootNs.addModule({ name: "Enums", isExported: true });
   const typesNs = rootNs.addModule({ name: "Types", isExported: true });
 
