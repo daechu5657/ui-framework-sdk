@@ -73,48 +73,13 @@ export namespace Contract {
     }
 
     export type ComponentManifestPropsBehaviorProperty = {
-      /**
-       * Format: int32
-       * @enum {integer}
-       */
-      kind: ComponentManifestPropsBehaviorPropertyKind;
+      kind?: Enums.ComponentManifestPropsKind;
       value?: ComponentManifestPropsBehavior[] | null;
-    } & (Omit<WithRequired<ComponentManifestProps, "kind">, "kind"> & {
-      /**
-       * @description discriminator enum property added by openapi-typescript
-       * @enum {string}
-       */
-      kind: ComponentManifestPropsBehaviorPropertyKind;
-    } & {
-      /**
-       * @description discriminator enum property added by openapi-typescript
-       * @enum {string}
-       */
-      kind: ComponentManifestPropsBehaviorPropertyKind;
-    });
+    } & ComponentManifestProps;
     export type ComponentManifestPropsBehaviorPropertyDefinition = {
-      /**
-       * Format: int32
-       * @enum {integer}
-       */
-      kind: ComponentManifestPropsBehaviorPropertyDefinitionKind;
+      kind?: Enums.ComponentManifestPropsKind;
       value?: ComponentManifestPropsBehaviorDefinition[] | null;
-    } & (Omit<
-      WithRequired<ComponentManifestPropsDefinition, "kind">,
-      "kind"
-    > & {
-      /**
-       * @description discriminator enum property added by openapi-typescript
-       * @enum {string}
-       */
-      kind: ComponentManifestPropsBehaviorPropertyDefinitionKind;
-    } & {
-      /**
-       * @description discriminator enum property added by openapi-typescript
-       * @enum {string}
-       */
-      kind: ComponentManifestPropsBehaviorPropertyDefinitionKind;
-    });
+    } & ComponentManifestPropsDefinition;
 
     export interface ComponentManifestPropsDefinition {
       kind?: Enums.ComponentManifestPropsKind;
@@ -139,48 +104,13 @@ export namespace Contract {
     }
 
     export type ComponentManifestPropsStyleProperty = {
-      /**
-       * Format: int32
-       * @enum {integer}
-       */
-      kind: ComponentManifestPropsStylePropertyKind;
+      kind?: Enums.ComponentManifestPropsKind;
       value?: ComponentManifestPropsStyle[] | null;
-    } & (Omit<WithRequired<ComponentManifestProps, "kind">, "kind"> & {
-      /**
-       * @description discriminator enum property added by openapi-typescript
-       * @enum {string}
-       */
-      kind: ComponentManifestPropsStylePropertyKind;
-    } & {
-      /**
-       * @description discriminator enum property added by openapi-typescript
-       * @enum {string}
-       */
-      kind: ComponentManifestPropsStylePropertyKind;
-    });
+    } & ComponentManifestProps;
     export type ComponentManifestPropsStylePropertyDefinition = {
-      /**
-       * Format: int32
-       * @enum {integer}
-       */
-      kind: ComponentManifestPropsStylePropertyDefinitionKind;
+      kind?: Enums.ComponentManifestPropsKind;
       value?: ComponentManifestPropsStyleDefinition[] | null;
-    } & (Omit<
-      WithRequired<ComponentManifestPropsDefinition, "kind">,
-      "kind"
-    > & {
-      /**
-       * @description discriminator enum property added by openapi-typescript
-       * @enum {string}
-       */
-      kind: ComponentManifestPropsStylePropertyDefinitionKind;
-    } & {
-      /**
-       * @description discriminator enum property added by openapi-typescript
-       * @enum {string}
-       */
-      kind: ComponentManifestPropsStylePropertyDefinitionKind;
-    });
+    } & ComponentManifestPropsDefinition;
 
     export interface ComponentManifestPropsStyleValue {
       designTokenId?: string | null;
