@@ -491,6 +491,80 @@ export interface paths {
     patch?: never;
     trace?: never;
   };
+  "/Public/Schema/PageModel": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get: {
+      parameters: {
+        query?: never;
+        header?: never;
+        path?: never;
+        cookie?: never;
+      };
+      requestBody?: never;
+      responses: {
+        /** @description OK */
+        200: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content: {
+            "text/plain": components["schemas"]["PageModel"];
+            "application/json": components["schemas"]["PageModel"];
+            "text/json": components["schemas"]["PageModel"];
+          };
+        };
+      };
+    };
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/Public/Schema/PageTreeModel": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get: {
+      parameters: {
+        query?: never;
+        header?: never;
+        path?: never;
+        cookie?: never;
+      };
+      requestBody?: never;
+      responses: {
+        /** @description OK */
+        200: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content: {
+            "text/plain": components["schemas"]["PageTreeModel"];
+            "application/json": components["schemas"]["PageTreeModel"];
+            "text/json": components["schemas"]["PageTreeModel"];
+          };
+        };
+      };
+    };
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
 }
 export type webhooks = Record<string, never>;
 export interface components {
@@ -613,6 +687,45 @@ export interface components {
       name: string | null;
       /** Format: int32 */
       order?: number;
+      /** Format: date-time */
+      createdTime?: string;
+      /** Format: date-time */
+      updatedTime?: string;
+      /** Format: date-time */
+      deletedTime?: string | null;
+    };
+    PageModel: {
+      id?: string | null;
+      projectId?: string | null;
+      spaceId?: string | null;
+      rootPageTreeId?: string | null;
+      name?: string | null;
+      /** Format: int32 */
+      order?: number;
+      /** Format: date-time */
+      createdTime?: string;
+      /** Format: date-time */
+      updatedTime?: string;
+      /** Format: date-time */
+      deletedTime?: string | null;
+    };
+    PageTreeModel: {
+      id?: string | null;
+      projectId?: string | null;
+      pageId?: string | null;
+      componentManifestId?: string | null;
+      variantId?: string | null;
+      name?: string | null;
+      /** Format: int32 */
+      order?: number;
+      parent?: string | null;
+      children?: string[] | null;
+      propsOverride?:
+        | (
+            | components["schemas"]["ComponentManifestPropsStyleProperty"]
+            | components["schemas"]["ComponentManifestPropsBehaviorProperty"]
+          )[]
+        | null;
       /** Format: date-time */
       createdTime?: string;
       /** Format: date-time */

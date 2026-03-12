@@ -138,5 +138,38 @@ export namespace Contract {
       updatedTime?: string;
       deletedTime?: string | null;
     }
+
+    export interface PageModel {
+      id?: string | null;
+      projectId?: string | null;
+      spaceId?: string | null;
+      rootPageTreeId?: string | null;
+      name?: string | null;
+      order?: number;
+      createdTime?: string;
+      updatedTime?: string;
+      deletedTime?: string | null;
+    }
+
+    export interface PageTreeModel {
+      id?: string | null;
+      projectId?: string | null;
+      pageId?: string | null;
+      componentManifestId?: string | null;
+      variantId?: string | null;
+      name?: string | null;
+      order?: number;
+      parent?: string | null;
+      children?: string[] | null;
+      propsOverride?:
+        | (
+            | ComponentManifestPropsStyleProperty
+            | ComponentManifestPropsBehaviorProperty
+          )[]
+        | null;
+      createdTime?: string;
+      updatedTime?: string;
+      deletedTime?: string | null;
+    }
   }
 }
