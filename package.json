@@ -1,15 +1,16 @@
 {
-  "dependencies": {
-    "ts-morph": "^27.0.2"
-  },
+  "type": "module",
   "devDependencies": {
     "@types/node": "^25.3.3",
     "prettier": "^3.8.1",
+    "ts-morph": "^27.0.2",
+    "tsup": "^8.5.1",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   },
   "scripts": {
-    "extract": "tsx src/extract-contract.ts",
-    "prettier": "prettier --write generated/schema.ts generated/contract.ts"
+    "extract": "tsx src/extract/extractContractModel.ts",
+    "prettier": "prettier --write src/generated/schema.ts src/generated/contract.ts",
+    "build": "tsup src/index.ts --format esm,cjs --dts --minify"
   }
 }

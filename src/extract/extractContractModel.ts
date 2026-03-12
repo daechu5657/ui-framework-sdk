@@ -9,8 +9,8 @@ import {
 async function main() {
   // 1) 입력 파일(schema.ts) 로드 + 출력 파일 준비
   const project = new Project({});
-  const src = project.addSourceFileAtPath("./generated/schema.ts");
-  const out = project.createSourceFile("./generated/contract.ts", "", {
+  const src = project.addSourceFileAtPath("./src/generated/schema.ts");
+  const out = project.createSourceFile("./src/generated/contract.ts", "", {
     overwrite: true,
   });
 

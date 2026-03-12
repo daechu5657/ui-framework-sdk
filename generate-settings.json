@@ -1,0 +1,4 @@
+{
+  "schema": "src/generated/schema.ts",
+  "contract": "src/generated/contract.ts"
+}
